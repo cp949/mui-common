@@ -1,6 +1,6 @@
 {
   "name": "@cp949/mui-common",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "repository": "https://github.com/cp949/mui-common.git",
   "author": "cp949 <cp949@naver.com>",
   "main": "build/es/index.js",

@@ -1,0 +1,41 @@
+{
+  "name": "@cp949/mui-common",
+  "version": "1.0.4",
+  "repository": "https://github.com/cp949/mui-common.git",
+  "author": "cp949 <cp949@naver.com>",
+  "main": "build/es/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "rimraf build && rollup -c rollup.config.all.mjs",
+    "clean": "rimraf build dist",
+    "dist": "rimraf dist && mkdirp dist && yarn build && node scripts/dist-package.mjs",
+    "lint": "eslint --fix \"src/**\" ",
+    "fmt": "prettier --write \"src/**\" "
+  },
+  "peerDependencies": {
+    "@mui/material": "^5",
+    "react": "^17 || ^18"
+  },
+  "devDependencies": {
+    "@mui/material": "^5.10.11",
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "mkdirp": "^1.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^3.2.3",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "shelljs": "^0.8.5",
+    "ts-loader": "^9.4.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4"
+  },
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "mui"
+  ]
+}

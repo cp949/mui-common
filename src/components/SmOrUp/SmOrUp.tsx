@@ -8,6 +8,7 @@ export default function SmOrUp(props: Props) {
     const { children } = props
     const matched = useMediaQuery((theme: Theme) => theme.breakpoints.up('sm'))
     if (!matched || !children) return null
-    if (!matched || !children) return null
-    return children
+
+    // eslint-disable react/jsx-no-useless-fragment
+    return <>{children}</>
 }

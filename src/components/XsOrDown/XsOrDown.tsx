@@ -8,5 +8,7 @@ export default function XsOrDown(props: Props) {
     const { children } = props
     const matched = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
     if (!matched || !children) return null
-    return children
+
+    // eslint-disable react/jsx-no-useless-fragment
+    return <>{children}</>
 }

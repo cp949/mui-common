@@ -10,5 +10,6 @@ export default function MdOrDown(props: Props) {
     const matched = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
     if (!matched || !children) return null
 
-    return children
+    // eslint-disable react/jsx-no-useless-fragment
+    return <>{children}</>
 }

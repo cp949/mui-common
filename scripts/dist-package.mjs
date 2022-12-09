@@ -26,7 +26,7 @@ async function main() {
     shell.mkdir('dist')
     // shell.cp('-rf', './build/cjs', 'dist/')
     shell.cp('-rf', './build/es', 'dist/')
-    updatePackageDistJson()
+    await updatePackageDistJson()
     shell.cp('-rf', 'README.md', 'dist/')
 }
 

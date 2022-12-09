@@ -13,7 +13,7 @@ const PortletHeader = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     return (
         <Box
             {...rest}
-            className={className}
+            className={className ? `PortletHeader-root ${className}` : 'PortletHeader-root'}
             ref={ref}
             sx={[
                 {

@@ -1,4 +1,4 @@
-import { Theme, useMediaQuery } from '@mui/material'
+import { useMediaQuery, useTheme } from '@mui/material'
 import React from 'react'
 
 type Props = {
@@ -6,7 +6,8 @@ type Props = {
 }
 export default function MdOrUp(props: Props) {
     const { children } = props
-    const matched = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
+    const theme = useTheme()
+    const matched = useMediaQuery(theme.breakpoints.up('md'))
     if (!matched || !children) return null
 
     // eslint-disable react/jsx-no-useless-fragment

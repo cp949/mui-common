@@ -1,5 +1,4 @@
-/* eslint-disable react/jsx-no-useless-fragment */
-import { Theme, useMediaQuery } from '@mui/material'
+import { useMediaQuery, useTheme } from '@mui/material'
 import React from 'react'
 
 type Props = {
@@ -7,7 +6,8 @@ type Props = {
 }
 export default function SmOrDown(props: Props) {
     const { children } = props
-    const matched = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
+    const theme = useTheme()
+    const matched = useMediaQuery(theme.breakpoints.down('md'))
     if (!matched || !children) return null
 
     // eslint-disable react/jsx-no-useless-fragment

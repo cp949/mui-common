@@ -1,9 +1,9 @@
 import { Box, SxProps, Typography } from '@mui/material'
-import React from 'react'
+import * as React from 'react'
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
     sx?: SxProps
-    icon?: JSX.Element
+    icon?: React.ReactNode
     title?: string
     subtitle?: string
 }
@@ -12,14 +12,18 @@ interface Props {
  * @param param0
  * @returns
  */
-export default function PortletLabel({ icon, title, subtitle, sx }: Props) {
+export const PortletLabel = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+    const { icon, title, subtitle, sx } = props
     return (
         <Box
-            sx={{
-                display: 'flex',
-                alignItems: 'center',
-                ...sx,
-            }}
+            ref={ref}
+            sx={[
+                {
+                    display: 'flex',
+                    alignItems: 'center',
+                },
+                ...(Array.isArray(sx) ? sx : [sx ?? false]),
+            ]}
         >
             {icon && (
                 <Box
@@ -60,4 +64,7 @@ export default function PortletLabel({ icon, title, subtitle, sx }: Props) {
             )}
         </Box>
     )
-}
+})
+
+PortletLabel.displayName = 'PortletLabel'
+

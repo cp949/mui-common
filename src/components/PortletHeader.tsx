@@ -1,13 +1,13 @@
 import { Box, SxProps } from '@mui/material'
-import React, { HTMLAttributes } from 'react'
+import * as React from 'react'
 
-type Props = {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
     sx?: SxProps
     noDivider?: boolean
     noPadding?: boolean
-} & HTMLAttributes<HTMLDivElement>
+}
 
-const PortletHeader = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const PortletHeader = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     const { children, noDivider, className, noPadding = false, sx, ...rest } = props
 
     return (
@@ -19,7 +19,7 @@ const PortletHeader = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
                 {
                     position: 'relative',
                     alignItems: 'center',
-                    borderBottom: noDivider ? 'none' : '1px solid #ddd',
+                    borderBottom: noDivider ? 'none' : '1px solid #E0E4EE',
                     borderTopLeftRadius: 2,
                     borderTopRightRadius: 2,
                     height: 56,
@@ -38,4 +38,4 @@ const PortletHeader = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 })
 
 PortletHeader.displayName = 'PortletHeader'
-export default PortletHeader
+

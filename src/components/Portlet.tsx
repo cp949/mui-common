@@ -1,12 +1,17 @@
 import { Paper, PaperProps } from '@mui/material'
-import React from 'react'
+import * as React from 'react'
 
 type Props = Omit<PaperProps, 'elevation' | 'component' | 'nonce'>
 
-const Portlet = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+const defaultProps: PaperProps = {
+    square: true,
+}
+
+export const Portlet = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     const { sx, className, children, ...restProps } = props
     return (
         <Paper
+            {...defaultProps}
             {...restProps}
             elevation={0}
             ref={ref}
@@ -16,7 +21,7 @@ const Portlet = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
                 {
                     display: 'flex',
                     flexDirection: 'column',
-                    border: '1px solid #ddd',
+                    border: '1px solid #E0E4EE',
                 },
                 ...(Array.isArray(sx) ? sx : [sx ?? false]),
             ]}
@@ -27,4 +32,3 @@ const Portlet = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 })
 
 Portlet.displayName = 'Portlet'
-export default Portlet

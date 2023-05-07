@@ -1,5 +1,5 @@
 import { Box, SxProps } from '@mui/material'
-import React from 'react'
+import * as React from 'react'
 
 type Props = {
     noPadding?: boolean
@@ -8,7 +8,7 @@ type Props = {
     children?: React.ReactNode
 }
 
-const PortletContent = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+export const PortletContent = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     const { noPadding = false, className, sx, children } = props
     return (
         <Box
@@ -29,4 +29,3 @@ const PortletContent = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 })
 
 PortletContent.displayName = 'PortletContent'
-export default PortletContent

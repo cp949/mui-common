@@ -1,7 +1,4 @@
 export * from './CustomTableBody'
-export * from './FullHeightDiv'
-export * from './FullHeightTableContainer'
-export * from './GradientAnimButton'
 export * from './Ignore'
 export * from './LgOrUp'
 export * from './MdOrDown'
@@ -16,3 +13,4 @@ export * from './PortletToolbar'
 export * from './SmOrDown'
 export * from './SmOrUp'
 export * from './XsOrDown'
+

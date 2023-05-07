@@ -12,3 +12,5 @@ export * from './components/PortletToolbar'
 export * from './components/SmOrDown'
 export * from './components/SmOrUp'
 export * from './components/XsOrDown'
+export * as nav from './nav'
+
